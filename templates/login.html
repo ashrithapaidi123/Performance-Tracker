@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login - Vignan's Institute of Information Technology</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="{{ url_for('static', filename='title_head.jpg') }}" alt="College Logo" class="logo">
+            <div class="college-info">
+                <h1>VIGNAN'S INSTITUTE OF INFORMATION TECHNOLOGY</h1>
+                <h2>(AUTONOMOUS)</h2>
+                <p>Approved by AICTE-New Delhi & Affiliated to JNTU-GV, Vizianagaram</p>
+                <p>Beside VSEZ, Duvvada, Vadlapudi Post, Gajuwaka, Visakhapatnam - 530 049.</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="background-section">
+            <div class="home-container" style="text-align: center;">
+                <h2 class="text">Login to Performance Tracker</h2>
+                {% if error_message %}
+                    <p style="color: red;">{{ error_message }}</p>
+                {% endif %}
+                <form action="{{ url_for('login') }}" method="post" class="login-form">
+                    <div class="form-group">
+                        <label for="username" class="label-bold">Username:</label>
+                        <input type="text" id="username" name="username" class="input-medium" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="label-bold">Password:</label>
+                        <input type="password" id="password" name="password" class="input-medium" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn">Login</button>
+                    </div>
+                </form>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        <ul class="flashes">
+                        {% for category, message in messages %}
+                            <li class="{{ category }}">{{ message }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endwith %}
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Copyright © All rights reserved</p>
+    </footer>
+</body>
+</html>
