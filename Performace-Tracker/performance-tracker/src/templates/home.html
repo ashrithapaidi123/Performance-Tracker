@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Home - Vignan's Institute of Information Technology</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="{{ url_for('static', filename='title_head.jpg') }}" alt="College Logo" class="logo">
+            <div class="college-info">
+                <h1>VIGNAN'S INSTITUTE OF INFORMATION TECHNOLOGY</h1>
+                <h2>(AUTONOMOUS)</h2>
+                <p>Approved by AICTE-New Delhi & Affiliated to JNTU-GV, Vizianagaram</p>
+                <p>Beside VSEZ, Duvvada, Vadlapudi Post, Gajuwaka, Visakhapatnam - 530 049.</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="background-section">
+            <div class="home-container" style="text-align: center;">
+                <h2 class="text">Welcome to the Performance Tracker</h2>
+                <p class="text">Please login to continue.</p>
+                <div class="home-buttons">
+                    <a href="{{ url_for('login') }}" class="btn">Login</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Copyright © All rights reserved</p>
+    </footer>
+</body>
+</html>

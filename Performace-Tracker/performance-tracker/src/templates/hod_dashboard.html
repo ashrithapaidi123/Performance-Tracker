@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>HOD Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      
+    </style>
+
+</head>
+<body>
+    <header>
+        <h1>HOD Dashboard</h1>
+    </header>
+    <main>
+        <h2>Faculty Details</h2>
+        <div class="faculty-details">
+            {% for faculty in faculty_details %}
+            <div class="faculty-card">
+                <h3>{{ faculty.username }}</h3>
+                <canvas id="chart-{{ loop.index }}"></canvas>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        var ctx = document.getElementById('chart-{{ loop.index }}').getContext('2d');
+                        var chartData = {
+                            labels: ['Personal Upskilling', 'Works Submission', 'Works Taken Up', 'Works Completion', 'Teaching Results', 'OT/Leaves Permitted', 'Invigilation Duties'],
+                            datasets: [{
+                                label: '{{ faculty.username }}',
+                                data: [
+                                    {{ faculty.personal_upskilling }},
+                                    {{ faculty.works_submission }},
+                                    {{ faculty.works_taken_up }},
+                                    {{ faculty.works_completion }},
+                                    {{ faculty.teaching_results }},
+                                    {{ faculty.ot_leaves_permitted }},
+                                    {{ faculty.invigilation_duties }}
+                                ],
+                                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                                borderColor: 'rgba(54, 162, 235, 1)',
+                                borderWidth: 1
+                            }]
+                        };
+                        var chartOptions = {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        };
+                        new Chart(ctx, {
+                            type: 'bar',
+                            data: chartData,
+                            options: chartOptions
+                        });
+                    });
+
+
+                </script>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+    <footer>
+        <p>Copyright © All rights reserved</p>
+    </footer>
+</body>
+</html>

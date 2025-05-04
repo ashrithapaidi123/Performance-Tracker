@@ -1,0 +1,31 @@
+PERFORMANCE TRACKER OF HOD & FACULTY:-
+ TO KEEP IN TRACK OF -
+	PERSONAL UPSKILLING
+	WORKS SUBMISSION
+	WORKS TAKEN UP 
+	WORKS COMPLETION 
+	TEACHING RESULTS 
+	OT/LEAVES PERIMETTED
+	INVIGILATION, DUTIES ASSIGNED
+
+
+USERNAME & PASSWORD OF  10 FACULTIES NAME AS FACULTIES IN THE CODES:-
+1.Auadhati Datta - 12025
+2.N.Jaya Lalitha - 22025
+3.P.Vijay Bhaskar - 32025
+4.J.Peter Praveen - 42025
+5.A.Venkatesh - 52025
+6.B.Prameela - 62025
+7.K.K.Deepika - 72025
+8.B.Eekshita - 82025
+9.P.Deekshitha - 92025
+10.N.Mani kumari - 102025
+
+
+Libraries Used:
+Flask: Used in app.py, dashboard.py, login.py for web application functionalities
+hashlib: Used in helpers.py for password hashing
+User Model: Imported from models.user in multiple files for user-related functionalities
+
+CMD:-
+pip install -r requirements.txt
